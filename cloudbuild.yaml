@@ -8,10 +8,11 @@ steps:
 
 - name: 'gcr.io/cloud-builders/kubectl'
   args:
-  - 'set'
-  - 'image'
+  # - 'set'
+  # - 'image'
+  - 'apply'
   - 'deployment/container1'
-  - 'container1=us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
+  # - 'container1=us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
   - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-assignment-cluster'
