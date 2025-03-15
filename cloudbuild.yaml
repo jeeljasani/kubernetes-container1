@@ -11,6 +11,7 @@ steps:
   # - 'set'
   # - 'image'
   - 'apply'
+  - '-f'
   - 'deployment/container1'
   # - 'container1=us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
   env:
