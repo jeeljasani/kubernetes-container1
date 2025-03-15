@@ -7,25 +7,10 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}']
 
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['get', 'deployments']
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-assignment-cluster'
-
-- name: 'gcr.io/cloud-builders/kubectl'
-  args:
-  - 'apply'
-  - '-f'
-  - 'kubernetes/kubernetes.yaml'
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-assignment-cluster'
-
-- name: 'gcr.io/cloud-builders/kubectl'
   args:
   - 'set'
   - 'image'
-  - 'kubernetes/container1'
+  - 'deployment/container1'
   - 'container1=us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
