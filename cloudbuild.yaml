@@ -17,3 +17,5 @@ steps:
   - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-assignment-cluster'
 images:
 - 'us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
+options:
+  logging: CLOUD_LOGGING_ONLY
