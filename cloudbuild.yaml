@@ -6,14 +6,19 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}']
 
-- name: 'gcr.io/cloud-builders/kubectl'
+- name: 'gcr.io/cloud-builders/gke-deploy'
   args:
   # - 'set'
   # - 'image'
-  - 'apply'
-  - '-f'
-  - 'deployment.apps/container1'
+  # - 'apply'
+  # - '-f'
+  - 'run'
+  - '--filename=./container1/'
   # - 'container1=us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}'
+  - '--location=us-central1-c'
+  - '--cluster=kubernetes-assignment-cluster'
+  id: deploy
+
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
   - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-assignment-cluster'
