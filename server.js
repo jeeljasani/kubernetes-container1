@@ -9,7 +9,8 @@ app.use(express.json());
 const PV_DIR = '/jeel_PV_dir';
 
 app.post('/store-file', async (req, res) => {
-    try {
+    try 
+    {
         if (!req.body || !req.body.hasOwnProperty('file') || req.body.file === null) {
             return res.status(400).json({
                 "file": null,
