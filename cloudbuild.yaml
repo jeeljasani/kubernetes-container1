@@ -6,7 +6,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/kubernetes-assignment-453414/kubernetes-repo/container1:${COMMIT_SHA}']
 
-- name: 'gcr.io/cloud-builders/gke-deploy'
+- name: 'gcr.io/cloud-builders/kubectl'
   args:
   # - 'set'
   # - 'image'
