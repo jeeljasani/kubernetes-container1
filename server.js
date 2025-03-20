@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-console.log('this is foe the container 1" pipeline check');
+console.log('this if or the contaier1 pipeline');
 
 app.use(express.json());
 
