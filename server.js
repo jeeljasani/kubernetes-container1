@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+console.log('Pipeline: Starting Container1 service initialization');
+
 app.use(express.json());
 
 const PV_DIR = '/jeel_PV_dir';
