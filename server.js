@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-console.log('Pipeline: Starting Container1 service initialization');
+console.log('Pipeline check for container 1: Starting Container1 service initialization');
 
 app.use(express.json());
 
