@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-console.log('container1');
+console.log('pipeline check for container1');
 
 app.use(express.json());
 
